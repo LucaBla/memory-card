@@ -209,7 +209,7 @@ body{
   }
 
   .test-wrapper{
-    width: 50%;
+   max-width: 50vw;
   }
 
   .card-container{
