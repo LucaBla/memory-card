@@ -13,7 +13,9 @@ function App() {
       {isModalOpen &&
       <Modal setIsModalOpen={setIsModalOpen}></Modal>
       }
-      <CardContainer ></CardContainer>
+      <div className='test-wrapper'>
+        <CardContainer ></CardContainer>
+      </div>
       <HelpButton setIsModalOpen={setIsModalOpen}></HelpButton>
     </div>
   );

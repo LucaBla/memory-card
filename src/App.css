@@ -23,18 +23,31 @@ body{
   height: 100%;
   max-height: 100%;
   width: 100%;
+  max-width: 100%;
   color: white;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
+.test-wrapper{
+  width: 80%;
+  max-width: 1500px;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: stretch;
+}
+
 .card-container{
-  max-width: 80%;
-  max-height: 90%;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template: repeat(3, 1fr) / repeat(5, 1fr);
   gap: 40px;
+  align-items: center;
+  justify-items: center;
+  height: 100%;
 }
 
 .card{
@@ -45,6 +58,10 @@ body{
   cursor: pointer;
   transition: 0.25s ease-in-out;
   box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 1);
+  width: 0;
+  height: 100%;
+  padding-left: 100%;
+  position: relative;
 }
 
 .card:hover{
@@ -54,13 +71,17 @@ body{
 .card img{
   width: 100%;
   height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  
 }
 
 .score-board-bg{
   font-family: 'Alfabetix';
   color: #ffffff;
   height: 150%;
-  width: 150%;
   justify-self: center;
   align-self: center;
   border-radius: 50%;
@@ -73,6 +94,7 @@ body{
   justify-content: center;
   overflow: hidden;
   box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 1);
+  aspect-ratio: 1 / 1;
 }
 
 .score-board{
@@ -186,10 +208,8 @@ body{
     --border-size: 3px;
   }
   .card-container{
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template: repeat(5, 1fr) / repeat(3, 1fr);
     gap: 20px;
-    max-height: 100%;
-    max-width: 85%;
   }
 
   .score{
@@ -215,14 +235,13 @@ body{
 
 @media (orientation: portrait) and (min-height: 600px) and (min-width: 540px){
   .card-container{
-   width: 70%;
+
   }
 }
 
 @media (orientation: portrait) and (max-height: 500px) {
   .card-container{
     gap: 10px;
-    width: 70%;
   }
 
   .help-btn{
@@ -251,7 +270,7 @@ body{
   }
 
   .card-container{
-    width: 60%;
+
   }
 }
 
@@ -261,7 +280,6 @@ body{
   }
 
   .card-container{
-    max-width: 90%;
     gap: 15px;
   }
 
@@ -297,14 +315,18 @@ body{
 
 @media (orientation: landscape) and (max-height: 300px) and (min-width: 500px) {
   .card-container{
-    max-width: 70%;
+
   }
 }
 
 @media (orientation: landscape) and (min-height: 720px) and (max-height: 900px){
+  :root{
+    --border-size: 3px;
+  }
+
   .card-container{
-    max-width: 90%;
-    gap: 30px;
+
+    gap: 20px;
   }
 
   .help-btn{
@@ -320,7 +342,7 @@ body{
     --border-size: 3px;
   }
   .card-container{
-    max-width: 60%;
+
     gap: 15px;
   }
 
