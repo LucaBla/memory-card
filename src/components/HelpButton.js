@@ -1,7 +1,7 @@
-function HelpButton() {
+function HelpButton(props) {
   return (
     <div className="help-btn">
-      <button>?</button>
+      <button onClick={() => props.setIsModalOpen(true)}>?</button>
     </div>
   );
 }

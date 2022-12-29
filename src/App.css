@@ -1,3 +1,7 @@
+:root{
+ --border-size: 5px; 
+}
+
 body{
   margin: 0px;
   max-height: 100vh;
@@ -10,7 +14,7 @@ body{
   max-height: 100%;
   height: 100%;
   background-position: center;
-  background-size:contain;
+  background-size:cover;
 }
 
 .App {
@@ -19,25 +23,32 @@ body{
   max-height: 100%;
   width: 100%;
   color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .card-container{
-  max-width: 80%;
-  max-height: 80%;
-  padding: 50px 250px;
+  max-width: 75%;
+  max-height: 90%;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   gap: 40px;
 }
 
 .card{
   background-color: transparent;
-  border: 5px solid #BBA16D;
+  border: var(--border-size) solid #BBA16D;
   border-radius: 20px;
   width: 100%;
   height: 100%;
   overflow: hidden;
   cursor: pointer;
+  transition: 0.25s ease-in-out;
+}
+
+.card:hover{
+  transform: scale(1.05, 1.05);
 }
 
 .card img{
@@ -45,7 +56,7 @@ body{
   height: 100%;
 }
 
-.score-board{
+.score-board-bg{
   font-family: 'Alfabetix';
   color: #ffffff;
   height: 150%;
@@ -54,23 +65,30 @@ body{
   align-self: center;
   border-radius: 50%;
   text-align: center;
-  background-color: #1EA896;
+  background-image: url('./background/bg_4.png');
+  background-size: cover;
   z-index: 1;
-  border: 5px solid #BBA16D;
+  border: var(--border-size) solid #BBA16D;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.score-board{
+  background-color: rgba(0, 0, 0, 0.7);
   display: grid;
   grid-template-areas: '.'
                        'score'
                        'highscore';
-                       grid-template-rows: 25% 50% 25%;
-                       
-                       
+  grid-template-rows: 25% 50% 25%;
+  width: 150%;
 }
 
 .score{
   align-self: center;
   justify-self: center;
   text-align: center;
-  font-size: 60px;
+  font-size: 5vh;
   grid-area: score;
 }
 
@@ -80,7 +98,7 @@ body{
 
 .highscore{
   align-self: flex-end;
-  font-size: 30px;
+  font-size: 2.5vh;
   grid-area: highscore;
 }
 
@@ -89,8 +107,12 @@ body{
   right: 50px;
   bottom: 50px;
   border-radius: 50%;
-  background-color: #1EA896;
-  border: 5px solid #BBA16D;
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.7), 
+    rgba(0, 0, 0, 0.7)
+  ), url('./background/bg_4.png');
+  background-position: 60% 50%;
+  border: var(--border-size) solid #BBA16D;
   width: 75px;
   height: 75px;
   display: flex;
@@ -106,38 +128,214 @@ body{
   cursor: pointer;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.modal-bg{
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.modal{
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  height: fit-content;
+  border-radius: 20px;
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.7), 
+    rgba(0, 0, 0, 0.7)
+  ), url('./background/bg_4.png');
+  background-size: contain;
+  border: 5px solid #BBA16D;
+  padding: 100px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.3);
+  font-size: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.rules-wrapper{
+  background-color: rgba(26, 27, 41, 1);
+  border-radius: 20px;
+}
+
+.modal h1{
+  margin: 0px;
+  margin-top: 15px;
+  text-align: center;
+}
+
+.modal li{
+  margin-top: 15px;
+  margin-right: 20px;
+}
+
+.modal li:last-child{
+  margin-bottom: 15px;
+}
+
+@media (orientation: portrait) {
+  :root{
+    --border-size: 3px;
   }
-  to {
-    transform: rotate(360deg);
+  .card-container{
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    max-height: 100%;
+    max-width: 85%;
+  }
+
+  .score{
+    font-size: 2.5vh;
+  }
+
+  .highscore{
+    font-size: 1.5vh;
+  }
+
+  .help-btn{
+    bottom: 10px;
+    right: 10px;
+    width: 50px;
+    height: 50px;
+  }
+
+  .modal{
+    padding: 50px 0px;
+    font-size: 16px;
+  }
+}
+
+@media (orientation: portrait) and (min-height: 600px) and (min-width: 540px){
+  .card-container{
+   width: 70%;
+  }
+}
+
+@media (orientation: portrait) and (max-height: 500px) {
+  .card-container{
+    gap: 10px;
+    width: 70%;
+  }
+
+  .help-btn{
+    bottom: 5px;
+    right: 5px;
+    width: 35px;
+    height: 35px;
+  }
+
+  .score{
+    font-size: 4vh;
+  }
+
+  .highscore{
+    font-size: 2.5vh;
+  }
+
+  .help-btn button{
+    font-size: 24px;
+  }
+}
+
+@media (orientation: portrait) and (max-height: 350px){
+  :root{
+    --border-size: 2px;
+  }
+
+  .card-container{
+    width: 60%;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 350px) {
+  :root{
+    --border-size: 3px;
+  }
+
+  .card-container{
+    max-width: 90%;
+    gap: 15px;
+  }
+
+  .score{
+    font-size: 6vh;
+  }
+
+  .highscore{
+    font-size: 3vh;
+  }
+
+  .help-btn{
+    bottom: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+  }
+
+}
+
+@media (orientation: landscape) and (max-height: 250px) {
+  .help-btn{
+    bottom: 5px;
+    right: 5px;
+    width: 30px;
+    height: 30px;
+  }
+
+  .help-btn button{
+    font-size: 26px;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 300px) and (min-width: 500px) {
+  .card-container{
+    max-width: 70%;
+  }
+}
+
+@media (orientation: landscape) and (min-height: 720px) and (max-height: 900px){
+  .card-container{
+    max-width: 90%;
+    gap: 30px;
+  }
+
+  .help-btn{
+    bottom: 10px;
+    right: 10px;
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media (orientation: landscape) and (min-height: 250px) and (min-width: 520px) and (max-height: 650px){
+  :root{
+    --border-size: 3px;
+  }
+  .card-container{
+    max-width: 60%;
+    gap: 15px;
+  }
+
+  .help-btn{
+    bottom: 10px;
+    right: 10px;
+    width: 60px;
+    height: 60px;
+  }
+
+  .modal{
+    font-size: 16px;
+    padding: 25px 0px;
+  }
+
+  .modal h1{
+    font-size: 25px;
   }
 }
 
