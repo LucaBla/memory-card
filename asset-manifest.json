@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/memory-card/static/css/main.7d85b2ae.css",
+    "main.js": "/memory-card/static/js/main.884c3765.js",
+    "static/js/787.d6a8b40f.chunk.js": "/memory-card/static/js/787.d6a8b40f.chunk.js",
+    "static/media/bg_3.png": "/memory-card/static/media/bg_3.b961904d1a7f67df6407.png",
+    "static/media/card_10.png": "/memory-card/static/media/card_10.fcfe4aaa884f7e187c9c.png",
+    "static/media/card_11.png": "/memory-card/static/media/card_11.d7092ff1ac02cf36e30a.png",
+    "static/media/card_8.png": "/memory-card/static/media/card_8.2ee6c3b6b092305e29ad.png",
+    "static/media/card_13.png": "/memory-card/static/media/card_13.c2481bace87a1260179b.png",
+    "static/media/card_0.png": "/memory-card/static/media/card_0.15fb88d5f7a6582d17fa.png",
+    "static/media/card_2.png": "/memory-card/static/media/card_2.98f36f7b218ffceea6fa.png",
+    "static/media/card_12.png": "/memory-card/static/media/card_12.30005f3a271e20f5df3b.png",
+    "static/media/card_3.png": "/memory-card/static/media/card_3.4a4bc27cb29ab191b264.png",
+    "static/media/card_9.png": "/memory-card/static/media/card_9.212932d342b2b0a9004c.png",
+    "static/media/bg_4.png": "/memory-card/static/media/bg_4.4d2598c997b8fb7a21ae.png",
+    "static/media/card_5.png": "/memory-card/static/media/card_5.89d8385a7e77c188e9d9.png",
+    "static/media/card_1.png": "/memory-card/static/media/card_1.4f2bf84bd22dec576847.png",
+    "static/media/card_6.png": "/memory-card/static/media/card_6.b57f6bf5cde3a56c4090.png",
+    "static/media/card_7.png": "/memory-card/static/media/card_7.d844b8ea160ab96fea00.png",
+    "static/media/card_4.png": "/memory-card/static/media/card_4.706ec2f84f37f032fa88.png",
+    "static/media/Alfabetix-WYA.ttf": "/memory-card/static/media/Alfabetix-WYA.27904868e5395954d5de.ttf",
+    "index.html": "/memory-card/index.html",
+    "main.7d85b2ae.css.map": "/memory-card/static/css/main.7d85b2ae.css.map",
+    "main.884c3765.js.map": "/memory-card/static/js/main.884c3765.js.map",
+    "787.d6a8b40f.chunk.js.map": "/memory-card/static/js/787.d6a8b40f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7d85b2ae.css",
+    "static/js/main.884c3765.js"
+  ]
+}
