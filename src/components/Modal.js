@@ -19,7 +19,7 @@ function Modal(props) {
               the game will end and you will lose.</li>
           <li>If you lose, the game will automatically restart.</li>
           <li>If you manage to click on all the cards without 
-              clicking on any that you have already clicked on, you will win the game.</li>
+              clicking on any card twice, you will win the game.</li>
         </ul>
       </div>
     </div>
