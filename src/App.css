@@ -207,6 +207,11 @@ body{
   :root{
     --border-size: 3px;
   }
+
+  .test-wrapper{
+    width: 50%;
+  }
+
   .card-container{
     grid-template: repeat(5, 1fr) / repeat(3, 1fr);
     gap: 20px;
@@ -235,7 +240,7 @@ body{
 
 @media (orientation: portrait) and (min-height: 600px) and (min-width: 540px){
   .card-container{
-
+    
   }
 }
 
