@@ -209,7 +209,10 @@ body{
   }
 
   .test-wrapper{
-   max-width: 50vw;
+    width: auto;
+    max-width: auto;
+    height: auto;
+    display: block;
   }
 
   .card-container{
